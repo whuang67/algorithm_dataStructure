@@ -19,7 +19,6 @@ for i in range(n):
 
 ###### Examples ######
 import ctypes
-
 class DynamticArray(object):
     def __init__(self):
         self.n = 0
@@ -52,4 +51,4 @@ class DynamticArray(object):
 arr = DynamticArray()
 len(arr)
 arr.append(2)
-arr[0]
+print(arr[0])
