@@ -49,9 +49,7 @@ if __name__ == "__main__":
     print(anagram2("clint eastwood", "old west action"))
     
     from nose.tools import assert_equal
-    
     class AnagramTest(object):
-        
         def test(self, sol):
             assert_equal(sol('go go go','gggooo'), True)
             assert_equal(sol('abc','cba'), True)
