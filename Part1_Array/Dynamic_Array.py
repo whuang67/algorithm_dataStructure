@@ -48,7 +48,9 @@ class DynamticArray(object):
     
     def make_array(self, new_cap):
         return (new_cap * ctypes.py_object)()
-arr = DynamticArray()
-len(arr)
-arr.append(2)
-print(arr[0])
+
+if __name__ == "__main__":
+    arr = DynamticArray()
+    len(arr)
+    arr.append(2)
+    print(arr[0])
