@@ -32,9 +32,9 @@ def cycle_check(node):
         current_node = current_node.nextnode
     return False
 
-a = Node(1)
-b = Node(2)
-c = Node(3)
-a.nextnode = b; b.nextnode = c; c.nextnode = a
-
-print(cycle_check(a))
+if __name__ == "__main__":
+    a = Node(1)
+    b = Node(2)
+    c = Node(3)
+    a.nextnode = b; b.nextnode = c; c.nextnode = a
+    print(cycle_check(a))
