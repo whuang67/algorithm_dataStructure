@@ -42,7 +42,7 @@ def sum_func(n):
         return n
     else:
         return n%10 + sum_func(n/10)
-        return n%10 + sum_func(n//10)  ## Python 3
+        ##  return n%10 + sum_func(n//10)  ## Python 3
 
 ## Problem 3
 """
