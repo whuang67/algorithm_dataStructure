@@ -5,7 +5,7 @@ public class Bank {
     private String email;
     private String phoneNumber;
 
-    // Setters ---
+    // Constructors ---
     public Bank() {
         this("0987654321", 100, "Serena van der Woodsen", "serena@vanderwoodsen.com", "800-999-9999");
         System.out.println("Empty constructor called!!!");
@@ -18,7 +18,10 @@ public class Bank {
         this.email = email;
         this.phoneNumber = phoneNumber;
     }
-
+    public Bank(String customerName, String email, String phoneNumber) {
+        this("0000000000", 0.01, customerName, email, phoneNumber);
+    }
+    // Setters ---
     public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
@@ -60,7 +63,7 @@ public class Bank {
     }
     public void withdraw(double amount){
         if(this.balance < amount)
-            System.out.println("Only "+this.balance+" available. Withdrawal not processed.");
+            System.out.println("Only "+String.format("%.2f", this.balance)+" available. Withdrawal not processed.");
         else {
             this.balance -= amount;
             System.out.println("Withdrawal of "+String.format("%.2f", amount)+
