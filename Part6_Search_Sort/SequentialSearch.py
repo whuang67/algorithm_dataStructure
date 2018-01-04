@@ -6,12 +6,9 @@ Created on Wed Jan 03 20:40:39 2018
 """
 
 ###### Sequential Search ######
-
-
-
-
 def search(arr, item, sort=False):
     
+    ## Unordered
     def seq_search(arr, item):
         pos = 0
         found = False
@@ -22,7 +19,8 @@ def search(arr, item, sort=False):
             else:
                 pos += 1
         return found
-
+    
+    ## Ordered
     def ordered_seq_search(arr, item):
         pos = 0
         found = False
@@ -38,7 +36,8 @@ def search(arr, item, sort=False):
                 pos += 1
                 
         return found
-
+    
+    ## If unknown, unordered is the default.
     if sort:
         return ordered_seq_search(arr, item)
     else:
