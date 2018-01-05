@@ -7,10 +7,14 @@ public class Main {
     public static void main(String[] args){
         int[] myArray = getIntegers(5);
         int[] sortedArray = sortIntegers(myArray);
+        int[] resizedArray = resizeArray(sortedArray, 7);
         System.out.println("Printing the original array -----");
         printArray(myArray);
         System.out.println("Printing the (bubble) sorted array -----");
         printArray(sortedArray);
+        System.out.println("Printing the resized array -----");
+        resizedArray[5] = 10; resizedArray[6] = 100;
+        printArray(resizedArray);
     }
 
     public static int[] getIntegers(int num) {
@@ -24,8 +28,9 @@ public class Main {
 
     public static void printArray(int[] array) {
         for(int i = 0; i < array.length; i++) {
-            System.out.println("Element "+i+", value is "+array[i]);
+            System.out.print(array[i]+" ");
         }
+        System.out.print("\n");
     }
 
     // Bubble Sort --
@@ -46,5 +51,14 @@ public class Main {
             }
         }
         return outputArray;
+    }
+
+    public static int[] resizeArray(int[] array, int newSize) {
+        int[] oldArray = Arrays.copyOf(array, array.length);
+        array = new int[newSize];
+        for(int i = 0; i < oldArray.length; i++) {
+            array[i] = oldArray[i];
+        }
+        return array;
     }
 }
