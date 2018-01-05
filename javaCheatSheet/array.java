@@ -21,7 +21,6 @@ public class Main {
 
     public static void printArray(int[] array) {
         for(int i = 0; i < array.length; i++) {
-            array[i] = i*10;
             System.out.println("Element "+i+", value is "+array[i]);
         }
     }
