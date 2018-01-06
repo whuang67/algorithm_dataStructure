@@ -19,6 +19,11 @@ public class Main {
         System.out.print("\n ------- List before being sorted.\n"); printArray(list4);
         shellSort(list4);
         System.out.print(" ------- List After being SHELL sorted.\n"); printArray(list4);
+        
+        double[] list5 = {2,3,1,4,8,7,0};
+        System.out.print("\n ------- List before being sorted.\n"); printArray(list5);
+        mergeSort(list5);
+        System.out.print(" ------- List After being MERGE sorted.\n"); printArray(list5);
     }
 
     // Bubble Sort -------------------------------------------------
@@ -82,7 +87,41 @@ public class Main {
             array[j] = currentValue;
         }
     }
+    
+    // Merge Sort -------------------------------------------------
+    public static void mergeSort(double[] array) {
+        if(array.length > 1) {
+            int midpoint = array.length/2;
 
+            double[] leftHalfArray = Arrays.copyOfRange(array, 0, midpoint);
+            double[] rightHalfArray = Arrays.copyOfRange(array, midpoint, array.length);
+
+            mergeSort(leftHalfArray); mergeSort(rightHalfArray);
+
+            int i = 0; int j = 0; int k = 0;
+            while(i < leftHalfArray.length && j < rightHalfArray.length) {
+                if(leftHalfArray[i] < rightHalfArray[j]) {
+                    array[k] = leftHalfArray[i];
+                    i++;
+                } else {
+                    array[k] = rightHalfArray[j];
+                    j++;
+                }
+                k++;
+            }
+
+            while(i < leftHalfArray.length) {
+                array[k] = leftHalfArray[i];
+                i++; k++;
+            }
+
+            while(j < rightHalfArray.length) {
+                array[k] = rightHalfArray[j];
+                j++; k++;
+            }
+        }
+    }
+    
     public static void printArray(double[] array) {
         for(int i = 0; i < array.length; i++) {
             System.out.print(array[i]+" ");
