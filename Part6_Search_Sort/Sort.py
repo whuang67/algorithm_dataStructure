@@ -42,7 +42,7 @@ def selection_sort2(arr):
 
 
 ###### Insertion Sort ########################
-def insertation_sort(arr):
+def insertion_sort(arr):
     
     for i in range(1, len(arr)):
         currentValue = arr[i]
@@ -60,11 +60,11 @@ def shell_sort(arr):
     
     while sublistcount > 0:
         for start in range(sublistcount):
-            gap_insertation_sort(arr, start, sublistcount)
+            gap_insertion_sort(arr, start, sublistcount)
         
         sublistcount = sublistcount/2
 
-def gap_insertation_sort(arr, start, gap):
+def gap_insertion_sort(arr, start, gap):
     for i in range(start+gap, len(arr), gap):
         
         currentValue = arr[i]
@@ -94,7 +94,7 @@ if __name__ == "__main__":
     
     ###### Insertation Sort ######
     arr4 = [3, 5, 4, 6, 8, 1, 2, 12, 41, 25]
-    insertation_sort(arr4)
+    insertion_sort(arr4)
     print(arr4)
     
     ###### Shell Sort ######
