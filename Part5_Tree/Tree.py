@@ -73,6 +73,33 @@ class BinaryTree(object):
     
     def getRootValue(self):
         return self.key
+    
+        """
+    def preorder(self):
+        print(self.key)
+        if self.left:
+            self.left.preorder()
+        if self.right:
+            self.right.preorder()
+    """
+
+def preorder(tree):
+    if tree:
+        print(tree.getRootValue())
+        preorder(tree.left)
+        preorder(tree.right)
+
+def postorder(tree):
+    if tree:
+        postorder(tree.left)
+        postorder(tree.right)
+        print(tree.getRootValue())
+
+def inorder(tree):
+    if tree:
+        inorder(tree.left)
+        print(tree.getRootValue())
+        inorder(tree.right)
 
 
 if __name__ == "__main__":
@@ -92,3 +119,6 @@ if __name__ == "__main__":
     print(r.getLeftChild())
     r.insertLeft("b")
     print(r.getLeftChild().getRootValue())
+    
+    print(preorder(r))
+    ## print(r.preorder())
