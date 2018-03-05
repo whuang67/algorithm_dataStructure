@@ -27,39 +27,43 @@ def getRightChild(root):
 
 ###### Binary Tree 2 ######
 
-class BinaryTree(object):
-    def __init__(self, rootObject):
-        self.key = rootObject
-        self.leftChild = None
-        self.rightChild = None
-    
-    def insertLeft(self, newNode):
-        if self.leftChild is None:
-            self.leftChild = BinaryTree(newNode)
+class BinaryTree2(object):
+    def __init__(self, r):
+        self.root = r
+        self.left = None
+        self.right = None
+        
+    def insertLeft(self, newBranch):
+        if self.left is None:
+            self.left = BinaryTree(newBranch)
         else:
-            t = BinaryTree(newNode)
-            t.leftChild = self.leftChild
-            self.leftChild = t
+            temp = BinaryTree(newBranch)
+            temp.left = self.left
+            self.left = temp
     
-    def insertRight(self, newNode):
-        if self.rightChild is None:
-            self.rightChild = BinaryTree(newNode)
+    def insertRight(self, newBranch):
+        if self.right is None:
+            self.right = BinaryTree(newBranch)
         else:
-            t = BinaryTree(newNode)
-            t.rightChild = self.rightChild
-            self.rightChild = t
-    
-    def getRightChild(self):
-        return self.rightChild
-    
-    def getLeftChild(self):
-        return self.leftChild
-    
-    def setRootValue(self, newObject):
-        self.key = newObject
+            temp = BinaryTree(newBranch)
+            temp.right = self.right
+            self.right = temp
     
     def getRootValue(self):
-        return self.key
+        return self.root
+    
+    def setRootValue(self, new_value):
+        self.root = new_value
+    
+    def getLeftChild(self):
+        if self.left is None:
+            return self.left
+        return self.left.getRootValue()
+   
+    def getRightChild(self):
+        if self.right is None:
+            return self.right
+        return self.right.getRootValue()
     
         """
     def preorder(self):
