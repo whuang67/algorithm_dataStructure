@@ -35,17 +35,17 @@ class BinaryTree2(object):
         
     def insertLeft(self, newBranch):
         if self.left is None:
-            self.left = BinaryTree(newBranch)
+            self.left = BinaryTree2(newBranch)
         else:
-            temp = BinaryTree(newBranch)
+            temp = BinaryTree2(newBranch)
             temp.left = self.left
             self.left = temp
     
     def insertRight(self, newBranch):
         if self.right is None:
-            self.right = BinaryTree(newBranch)
+            self.right = BinaryTree2(newBranch)
         else:
-            temp = BinaryTree(newBranch)
+            temp = BinaryTree2(newBranch)
             temp.right = self.right
             self.right = temp
     
