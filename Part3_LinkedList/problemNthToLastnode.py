@@ -18,7 +18,9 @@ class Node(object):
     ## DON'T forget to check if n is too big.
 
 def nth_to_last_node(n, head):
-    marker1 = marker2 = head
+    if n <= 0:
+        raise LookupError("Inappropriate n")
+    marker1, marker2 = head, head
     
     for i in range(n-1):
         if not marker1.nextnode:
